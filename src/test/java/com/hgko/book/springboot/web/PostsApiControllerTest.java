@@ -77,17 +77,17 @@ public class PostsApiControllerTest {
         String expectedTitle = "title2";
         String expectedContent = "content2";
 
-        PostsUpdateRqquestDto rqquestDto = PostsUpdateRqquestDto.builder()
+        PostsUpdateRqquestDto rquestDto = PostsUpdateRqquestDto.builder()
                 .title(expectedTitle)
                 .content(expectedContent)
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
 
-        HttpEntity<PostsUpdateRqquestDto> rqquestEntity = new HttpEntity<>(rqquestDto);
+        HttpEntity<PostsUpdateRqquestDto> rquestEntity = new HttpEntity<>(rquestDto);
 
         //when
-        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, rqquestEntity, Long.class);
+        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, rquestEntity, Long.class);
 
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
