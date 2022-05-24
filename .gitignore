@@ -1,5 +1,9 @@
-# Project exclude paths
-/.gradle/
-/.idea/
-/out
-/build
+# Created by .ignore support plugin (hsz.mobi)
+
+.gradle
+.idea
+
+application-oauth.properties
+
+build
+out
