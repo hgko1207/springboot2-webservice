@@ -54,3 +54,5 @@ EC2 서버에 접속해서 다음과 같이 디렉토리를 생성합니다.
 ```shell
 mkdir ~/app/step2 && mkdir ~/app/step2/zip
 ```
+
+Travis CI의 Build가 끝나면 S3에 zip 파일이 전송되고, zip 파일은 /home/ec2-user/app/step2/zip로 복사되어 압축을 풉니다.
