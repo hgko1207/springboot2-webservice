@@ -46,3 +46,11 @@ The AWS CodeDeploy agent is running as PID XXX
 # 이럴 경우 yum install 로 루비를 설치합니다.
 sudo yum install ruby
 ```
+
+## Travis CI, S3, CodeDeploy 연동
+
+EC2 서버에 접속해서 다음과 같이 디렉토리를 생성합니다.
+
+```shell
+mkdir ~/app/step2 && mkdir ~/app/step2/zip
+```
