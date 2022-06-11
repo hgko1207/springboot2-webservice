@@ -58,6 +58,11 @@ mkdir ~/app/step2 && mkdir ~/app/step2/zip
 ## 리눅스 명령어
 
 ```shell
+# curl 은 remote 에서 받아온 데이터를 기본적으로는 콘솔에 출력합니다.
+# -o 옵션 뒤에 FILE 을 적어주면 해당 FILE 로 저장합니다.
+# -s 옵션은 진행 내역이나 메시지 등을 출력하지 않습니다. -o 옵션으로 /dev/null 를 작성하면 결과물도 출력되지 않습니다.
+curl -s -o /dev/null -w "%{http_code}" http://localhost/profile
+
 # list open files의 약자로 시스템에서 열려있는 파일에 대한 정보를 출력해주는 명령어입니다.
 # -t 옵션을 주면 PID만 출력합니다.
 # -i 옵션에 프로토콜 이름과 포트 번호를 명시해주면 특정 포트를 사용하는 프로세스 정보 출력합니다.
