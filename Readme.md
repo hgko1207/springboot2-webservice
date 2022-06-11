@@ -70,7 +70,10 @@ lsof -ti tcp:8080
 
 # 하나의 문장을 만들어 파이프라인(l)으로 넘겨주기 위해 echo를 사용합니다.
 # tee 명령어 : 화면에 출력되는것들을 파일로 출력
-echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/conf.d/service-url.inc 
+echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/conf.d/service-url.inc
+
+# 애플리케이션 실행 확인
+ps -ef | grep java 
 ```
 
 ## bash 스크립트 명령어
@@ -79,4 +82,18 @@ echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/co
 # 자바로 보면 일종의 import 구문입니다.
 # 해당 코드로 인해 profile.sh의 여러 function을 사용할 수 있게 됩니다.
 source profile.sh
+```
+
+## 로그 확인
+
+CodeDeploy 로그로 잘 진행되는지 확인합니다.
+
+```shell
+tail -f /opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployment.log
+```
+
+스프링 부트 로그를 확인합니다.
+
+```shell
+vim ~/app/step3/nohup.out
 ```
