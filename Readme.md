@@ -54,3 +54,24 @@ EC2 서버에 접속해서 다음과 같이 디렉토리를 생성합니다.
 ```shell
 mkdir ~/app/step2 && mkdir ~/app/step2/zip
 ```
+
+## 리눅스 명령어
+
+```shell
+# list open files의 약자로 시스템에서 열려있는 파일에 대한 정보를 출력해주는 명령어입니다.
+# -t 옵션을 주면 PID만 출력합니다.
+# -i 옵션에 프로토콜 이름과 포트 번호를 명시해주면 특정 포트를 사용하는 프로세스 정보 출력합니다.
+lsof -ti tcp:8080
+
+# 하나의 문장을 만들어 파이프라인(l)으로 넘겨주기 위해 echo를 사용합니다.
+# tee 명령어 : 화면에 출력되는것들을 파일로 출력
+echo "set \$service_url http://127.0.0.1:${IDLE_PORT};" | sudo tee /etc/nginx/conf.d/service-url.inc 
+```
+
+## bash 스크립트 명령어
+
+```shell
+# 자바로 보면 일종의 import 구문입니다.
+# 해당 코드로 인해 profile.sh의 여러 function을 사용할 수 있게 됩니다.
+source profile.sh
+```
